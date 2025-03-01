@@ -1,0 +1,27 @@
+[package]
+name = "theodolite"
+description = "Expression Trace Exchange Format"
+version = "0.0.1"
+authors = ["Leni Aniva"]
+
+keywords = ["proof-assistant", "machine-learning", "automated-reasoning"]
+edition = "2021"
+
+[dependencies]
+
+# Bookkeeping
+petgraph = "^0.7.0"
+
+# Diagnostics
+tracing = "^0.1.40"
+owo-colors = "^4.0.0"
+
+# Python
+pyo3 = { version = "^0.23", features = ["extension-module"], optional = true }
+pyo3-async-runtimes = { version = "^0.23", features = ["tokio-runtime"], optional = true }
+
+# Serialization
+rkyv = { version = "0.8.10" }
+
+[features]
+python = ["dep:pyo3", "dep:pyo3-async-runtimes"]

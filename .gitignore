@@ -1,0 +1,9 @@
+.*
+!.gitignore
+
+# Rust
+/target
+
+# Python
+__pycache__
+*.py[cod]
